@@ -51,7 +51,7 @@ void loop() {
   client.loop();
   Serial.println("********** Publish MQTT data to ASKSENSORS");
   char mqtt_payload[30] = "";
-  snprintf (mqtt_payload, 100, "module1=%ld", random(10,100));
+  snprintf (mqtt_payload, 30, "m1=%ld&m2=%ld", random(10,100), random(10,100));
   Serial.print("Publish message: ");
   Serial.println(mqtt_payload);
   client.publish(pubTopic, mqtt_payload);
